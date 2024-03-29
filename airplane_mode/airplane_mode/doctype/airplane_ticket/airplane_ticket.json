@@ -16,6 +16,8 @@
   "destination_airport",
   "destination_airport_code",
   "status",
+  "section_break_kthaa",
+  "add_ons",
   "departure_details_section",
   "departure_date",
   "departure_time",
@@ -112,11 +114,21 @@
    "label": "Status ",
    "options": "Booked\nChecked-In\nBoarded",
    "reqd": 1
+  },
+  {
+   "fieldname": "section_break_kthaa",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "add_ons",
+   "fieldtype": "Table",
+   "label": "Add Ons",
+   "options": "Airplane Ticket Add-on Item"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-03-28 13:41:50.137384",
+ "modified": "2024-03-29 13:14:01.431387",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Ticket",
