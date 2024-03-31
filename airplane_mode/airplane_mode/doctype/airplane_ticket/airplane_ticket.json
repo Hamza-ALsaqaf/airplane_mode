@@ -18,11 +18,16 @@
   "status",
   "section_break_kthaa",
   "add_ons",
+  "section_break_2pftd",
+  "flight_price",
+  "column_break_rkakn",
+  "total_amount",
   "departure_details_section",
   "departure_date",
   "departure_time",
   "column_break_swplv",
-  "duration_of_flight"
+  "duration_of_flight",
+  "amended_from"
  ],
  "fields": [
   {
@@ -124,11 +129,41 @@
    "fieldtype": "Table",
    "label": "Add Ons",
    "options": "Airplane Ticket Add-on Item"
+  },
+  {
+   "fieldname": "flight_price",
+   "fieldtype": "Currency",
+   "label": "Flight Price",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_rkakn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_2pftd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Airplane Ticket",
+   "print_hide": 1,
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2024-03-29 13:14:01.431387",
+ "modified": "2024-03-29 14:01:54.040454",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Ticket",

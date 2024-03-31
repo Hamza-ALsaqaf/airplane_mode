@@ -3,6 +3,7 @@
 
 import frappe
 from frappe.model.document import Document
+from frappe.utils import unique
 
 class FlightPassenger(Document):
 	def before_save(self):
@@ -10,3 +11,4 @@ class FlightPassenger(Document):
 		# frappe.errprint(self.full_name)
 	def set_full_name(self):
 		self.full_name=f"{self.first_name} {self.last_name}"
+	
