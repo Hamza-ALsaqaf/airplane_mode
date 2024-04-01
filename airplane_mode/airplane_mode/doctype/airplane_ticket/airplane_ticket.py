@@ -3,6 +3,8 @@
 
 import frappe
 from frappe.model.document import Document
+import random
+import string
 # from frappe.utils import unique
 class AirplaneTicket(Document):
 	def before_save(self):
@@ -29,3 +31,16 @@ class AirplaneTicket(Document):
 	def before_submit(self):
 		if self.doctype == "Airplane Ticket" and self.status != "Boarded":
 			frappe.throw("Airplane Ticket can only be submitted if the status is 'Boarded'.")
+
+	def generate_random_seat(self):
+		# Generate a random integer between 10 and 99
+		random_integer = random.randint(10, 99)
+		# Generate a random capital alphabet from A to E
+		random_alphabet = random.choice(string.ascii_uppercase[:5])
+		seat_number = f"{random_integer}{random_alphabet}"
+		return seat_number
+	def before_insert(self):
+		if self.is_new():
+			seat_number = self.generate_random_seat()
+			# frappe.errprint(seat_number)
+			self.seat = seat_number
