@@ -1,0 +1,26 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .color {
+    width: 500px;
+    height: 500px;
+    background-color: black;
+}
+    </style>
+</head>
+<body>
+    {% set color =frappe.form_dict["color"]%}
+    <div class="color" {% if color%} style="width: 500px;
+        height: 500px;
+        background-color:{{color}};"{%endif%}></div>
+</body>
+</html>
+
+{% endblock %}
