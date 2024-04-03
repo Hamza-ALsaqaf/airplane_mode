@@ -17,6 +17,10 @@ frappe.ui.form.on('Airplane Ticket', {
 
 		frm.set_value("total_amount", total_amount)
 	},
+	flight_price: function(frm) {
+		frm.trigger("update_total_amount");//trigger==> it will get the function and pass frm pram to it
+
+	},
 });
 frappe.ui.form.on('Airplane Ticket Add-on Item', { // The child table is defined in a DoctType called "Dynamic Link"
 	add_ons_add(frm, cdt, cdn) { // "links" is the name of the table field in ToDo, "_add" is the event
