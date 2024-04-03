@@ -199,3 +199,8 @@ app_license = "MIT"
 # auth_hooks = [
 #	"airplane_mode.auth.validate"
 # ]
+jenv = {
+	"methods": [
+		"durationFormat:airplane_mode.airplane_mode.doctype.airplane_flight.airplane_flight.durationFormat"
+	]
+}

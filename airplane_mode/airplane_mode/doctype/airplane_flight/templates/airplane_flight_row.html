@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{{ title }}</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+	<div class="container mt-5">
+		{% set airplane = frappe.get_doc('Airplane', doc.airplane) %}
+		<h1 class="text-center">{{ airplane.airline }}</h1>
+		<ul class="list-unstyled">
+			<li class="card mb-3">
+				<div class="card-body">
+					<h2 class="card-title">{{ doc.source_airport_code }} to {{ doc.destination_airport_code }}</h2>
+					<div class="row">
+						<div class="col-md-4">
+							<p class="card-text"><strong>Date of Departure:</strong> {{
+								frappe.format_date(doc.date_of_departure, "dd-MMM-yyyy") }}</p>
+						</div>
+						<div class="col-md-4">
+							<p class="card-text"><strong>Time of Departure:</strong> {{ doc.time_of_departure }}</p>
+						</div>
+						<div class="col-md-4">
+							<p class="card-text"><strong>Duration:</strong> {{ doc.durationFormat() }}</p>
+							<!-- <p class="card-text"><strong>Duration:</strong> {{ frappe.utils.format_duration(doc.duration) }}</p> -->
+
+						</div>
+					</div>
+					<a href="{{ doc.route }}" class="btn btn-primary">View Flight</a>
+				</div>
+			</li>
+		</ul>
+	</div>
+</body>
+
+</html>

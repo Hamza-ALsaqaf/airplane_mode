@@ -1,0 +1,39 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ doc.airplane }}</title>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">{{ doc.airplane }}</h1>
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">{{ doc.source_airport_code }} to {{ doc.destination_airport_code }}</h2>
+                <div class="row">
+                    {% set airplane = frappe.get_doc('Airplane', doc.airplane) %}
+                    <div class="col-md-6">
+                        <p class="card-text"><strong>Airline:</strong> {{ airplane.airline }}</p>
+                        <p class="card-text"><strong>Date:</strong> {{ frappe.format_date(doc.date_of_departure,
+                            "dd-MMM-yyyy") }}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="card-text"><strong>Time of Departure:</strong> {{ doc.time_of_departure }}</p>
+                        <p class="card-text"><strong>Duration:</strong> {{ doc.durationFormat() }}</p>
+                    </div>
+                </div>
+                <a href="{{ doc.route }}" class="btn btn-primary">Book Flight</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+{% endblock %}

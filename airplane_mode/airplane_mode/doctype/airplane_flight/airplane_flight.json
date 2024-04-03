@@ -1,16 +1,19 @@
 {
  "actions": [],
+ "allow_guest_to_view": 1,
  "allow_rename": 1,
- "autoname": "format:{airplane}-{MM}-{YYYY}-{#####}",
- "creation": "2024-03-31 15:02:04.639866",
+ "autoname": "format:{airplane}-{MM}-{YYYY}-{####}",
+ "creation": "2024-04-02 13:08:05.954231",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
   "airplane",
+  "is_published",
   "column_break_d3kvz",
   "status",
+  "route",
   "airport_details_section",
   "source_airport",
   "source_airport_code",
@@ -121,9 +124,22 @@
    "fieldtype": "Data",
    "label": "Destination Airport Code",
    "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_published",
+   "fieldtype": "Check",
+   "label": "Is Published?"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route"
   }
  ],
+ "has_web_view": 1,
  "index_web_pages_for_search": 1,
+ "is_published_field": "is_published",
  "is_submittable": 1,
  "links": [
   {
@@ -131,7 +147,7 @@
    "link_fieldname": "flight"
   }
  ],
- "modified": "2024-03-31 15:43:19.469288",
+ "modified": "2024-04-02 13:35:33.675048",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Flight",
@@ -152,6 +168,7 @@
   }
  ],
  "quick_entry": 1,
+ "route": "flights",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
